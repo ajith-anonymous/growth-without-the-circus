@@ -1,7 +1,7 @@
 import { motion, useScroll, useSpring } from "framer-motion";
 import { useRef } from "react";
 import { growthSteps } from "@/data/content";
-import { Reveal, RevealLines } from "./Reveal";
+import { RevealLines } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
 export function GrowthSystems() {
@@ -31,15 +31,20 @@ export function GrowthSystems() {
 
           <ol className="grid gap-12 lg:grid-cols-5 lg:gap-6">
             {growthSteps.map((step, i) => (
-              <Reveal key={step.number} delay={i * 0.1}>
-                <li className="group relative pl-20 lg:pl-0">
+              <motion.li
+                key={step.number}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
+                className="group relative pl-20 lg:pl-0"
+              >
                   <span className="absolute left-0 top-0 grid h-14 w-14 place-items-center rounded-full border border-paper/20 bg-ink font-grotesk text-sm font-bold transition-colors duration-500 group-hover:border-signal group-hover:bg-signal group-hover:text-ink lg:relative">
                     {step.number}
                   </span>
                   <h3 className="type-wide text-3xl lg:mt-10 xl:text-4xl">{step.title}</h3>
                   <p className="mt-4 max-w-xs leading-relaxed text-paper/60">{step.text}</p>
-                </li>
-              </Reveal>
+              </motion.li>
             ))}
           </ol>
         </div>
