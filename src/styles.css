@@ -183,7 +183,7 @@
 
 /* ---------- Typography ---------- */
 
-@utility font-display {
+@utility type-display {
   font-family: var(--font-display);
   font-stretch: 125%;
   font-weight: 900;
@@ -192,7 +192,7 @@
   line-height: 0.88;
 }
 
-@utility font-display-wide {
+@utility type-wide {
   font-family: var(--font-display);
   font-stretch: 112%;
   font-weight: 800;
