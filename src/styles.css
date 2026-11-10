@@ -323,3 +323,7 @@
   0% { transform: translateY(-100%); }
   60%, 100% { transform: translateY(200%); }
 }
+
+@utility text-hero {
+  font-size: clamp(2rem, 8.6vw, 9.25rem);
+}

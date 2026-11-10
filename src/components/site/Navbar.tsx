@@ -70,7 +70,7 @@ export function Navbar() {
         >
           <ScrollLink to="top" className="group flex items-center gap-2.5 text-paper" onNavigate={() => setOpen(false)}>
             <span className="grid h-8 w-8 place-items-center rounded-full bg-paper text-ink transition-transform duration-500 group-hover:rotate-[-12deg]">
-              <span className="font-display text-sm font-black" style={{ fontStretch: "125%" }}>
+              <span className="type-display text-sm">
                 D
               </span>
             </span>
