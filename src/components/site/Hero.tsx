@@ -30,6 +30,7 @@ export function Hero() {
 
         <RevealLines
           as="h1"
+          id="hero-title"
           animateOnMount
           delay={0.35}
           className="type-display text-hero"
@@ -44,9 +45,6 @@ export function Hero() {
             </span>,
           ]}
         />
-        <span id="hero-title" className="sr-only">
-          We don't just run ads. We build growth.
-        </span>
 
         <div className="mt-14 grid gap-12 lg:mt-20 lg:grid-cols-12 lg:items-end">
           <motion.div
@@ -96,7 +94,7 @@ export function Hero() {
         </a>
       </div>
 
-      <div className="relative z-10 -mb-6 -rotate-[1.5deg] scale-[1.03] border-y-2 border-ink bg-signal py-4 text-ink sm:py-5">
+      <div className="relative z-10 mb-10 -rotate-[1.5deg] scale-[1.03] border-y-2 border-ink bg-signal py-4 text-ink sm:py-5">
         <Marquee duration={36} trackClassName="gap-8 pr-8" ariaLabel="What we do">
           {[...services.map((s) => s.title), "Full-funnel growth"].map((t) => (
             <span key={t} className="flex items-center gap-8 type-display text-2xl sm:text-4xl">

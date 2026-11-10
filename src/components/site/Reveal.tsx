@@ -27,6 +27,7 @@ type LinesProps = {
   delay?: number;
   as?: "h1" | "h2" | "h3" | "p";
   animateOnMount?: boolean;
+  id?: string;
 };
 
 /** Masked line-by-line text reveal for editorial headlines. */
@@ -37,6 +38,7 @@ export function RevealLines({
   delay = 0,
   as = "h2",
   animateOnMount = false,
+  id,
 }: LinesProps) {
   const Tag = motion[as];
   const trigger = animateOnMount
@@ -44,6 +46,7 @@ export function RevealLines({
     : { whileInView: "show" as const, viewport: { once: true, margin: "-80px" } };
   return (
     <Tag
+      id={id}
       className={className}
       initial="hidden"
       {...trigger}
